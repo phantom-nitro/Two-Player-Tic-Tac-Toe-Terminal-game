@@ -27,8 +27,6 @@ def isinside(n):
 				val = int(input("Player 'X' position should be between 0 and 8: "))
 				if (val <= 8) and (val >= 0):
 					test = 1
-				else:
-					continue
 
 	elif n == 'O':
 		val = int(input("Player 'O' position: "))
@@ -37,8 +35,6 @@ def isinside(n):
 				val = int(input("Player 'O' position should be between 0 and 8: "))
 				if (val <= 8) and (val >= 0):
 					test = 1
-				else:
-					continue
 	test = 0
 	return val
 
@@ -48,7 +44,6 @@ def engine(moves, movecheck):
 		if (moves%2) == 0:
 			val = isinside('X')
 			if movecheck[val] == 1:
-				print(movecheck)
 				while poscheck == 0:
 					print("Player 'X' should input different position")
 					val = isinside('X')
@@ -59,12 +54,10 @@ def engine(moves, movecheck):
 						poscheck = 1
 			else:
 				movecheck[val] = 1
-				print(movecheck)
 
 		else:
 			val = isinside('O')
 			if movecheck[val] == 1:
-				print(movecheck)
 				while poscheck == 0:
 					print("Player 'O' should input different position")
 					val = isinside('O')
@@ -77,7 +70,6 @@ def engine(moves, movecheck):
 						
 			else:
 				movecheck[val] = 1
-				print(movecheck)
 			
 		poscheck = 0
 		return val, movecheck
